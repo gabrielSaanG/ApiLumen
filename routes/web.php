@@ -24,6 +24,20 @@ $router->post('/manufacturers/create', 'ManufacturesController@store');
 $router->post('/manufacturers/update/{id}', 'ManufacturesController@update');
 $router->delete('/manufacturers/delete/{id}', 'ManufacturesController@destroy');
 
+$router->get('/sales', 'salesController@index');
+$router->get('/sales/{id}', 'salesController@show');
+$router->post('/sales/create', 'salesController@store');
+$router->post('/sales/update/{id}', 'salesController@update');
+$router->delete('/sales/delete/{id}', 'salesController@destroy');
+
+$router->get('/sales_items', 'salesItemController@index');
+$router->get('/sales_items/{id}', 'salesItemController@show');
+$router->post('/sales_items/create', 'salesItemController@store');
+$router->post('/sales_items/update/{id}', 'salesItemController@update');
+$router->delete('/sales_items/delete/{id}', 'salesItemController@destroy');
+
+
+
 $router->get('/', function () use ($router) {
     return $router->app->version();
 });
