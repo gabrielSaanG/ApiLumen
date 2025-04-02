@@ -18,11 +18,11 @@ $router->post('/products/create', 'ProductsController@store');
 $router->post('/products/update/{id}', 'ProductsController@update');
 $router->delete('/products/delete/{id}', 'ProductsController@destroy');
 
-$router->get('/manufacturers', 'ManufacturesController@index');
-$router->get('/manufacturers/{id}', 'ManufacturesController@show');
-$router->post('/manufacturers/create', 'ManufacturesController@store');
-$router->post('/manufacturers/update/{id}', 'ManufacturesController@update');
-$router->delete('/manufacturers/delete/{id}', 'ManufacturesController@destroy');
+$router->get('/manufacturers', 'ManufacturerController@index');
+$router->get('/manufacturers/{id}', 'ManufacturerController@show');
+$router->post('/manufacturers/create', 'ManufacturerController@store');
+$router->post('/manufacturers/update/{id}', 'ManufacturerController@update');
+$router->delete('/manufacturers/delete/{id}', 'ManufacturerController@destroy');
 
 $router->get('/sales', 'salesController@index');
 $router->get('/sales/{id}', 'salesController@show');
