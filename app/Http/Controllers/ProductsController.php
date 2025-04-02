@@ -6,12 +6,14 @@ use App\Models\Products;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
+
 class ProductsController extends Controller
 {
 
     public function index()
     {
-        return response()->json('teste');
+        $products = Products::all();
+        return Response()->json($products);
     }
 
 
@@ -28,7 +30,8 @@ class ProductsController extends Controller
 
     public function show($id)
     {
-        //
+        $products = Products::find($id);
+        return Response()->json($products);
     }
 
 
@@ -57,6 +60,8 @@ class ProductsController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $products = Products::find($id);
+        $products->delete();
+        return Response()->json($products);
     }
 }
