@@ -16,6 +16,7 @@ class CreateSalesTable extends Migration
         Schema::create('sales', function (Blueprint $table) {
             $table->id('sale_id');
             $table->date('sale_date');
+            $table->decimal('total_value', 8, 2);
         });
     }
 
