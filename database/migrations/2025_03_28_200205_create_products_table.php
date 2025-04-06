@@ -19,8 +19,8 @@ class CreateProductsTable extends Migration
             $table->string('product_description');
             $table->date('fabrication_date');
             $table->date('expiration_date');
-            $table->float('buy_price');
-            $table->float('sell_price');
+            $table->decimal('buy_price', 8, 2);
+            $table->decimal('sell_price', 8, 2);
             $table->integer('manufacturer_id')->unsigned()->change();
             $table->timestamps();
         });
