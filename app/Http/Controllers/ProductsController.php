@@ -144,7 +144,7 @@ class ProductsController extends Controller
     }
 
     /**
-     * @OA\Post(
+     * @OA\Put(
      *     path="/products/update/{id}",
      *     summary="Alterar um cadastro",
      *     tags={"Produto"},

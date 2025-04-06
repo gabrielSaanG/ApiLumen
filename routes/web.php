@@ -15,25 +15,25 @@
 $router->get('/products', 'ProductsController@index');
 $router->get('/products/{id}', 'ProductsController@show');
 $router->post('/products/create', 'ProductsController@store');
-$router->post('/products/update/{id}', 'ProductsController@update');
+$router->put('/products/update/{id}', 'ProductsController@update');
 $router->delete('/products/delete/{id}', 'ProductsController@destroy');
 
 $router->get('/manufacturers', 'ManufacturerController@index');
 $router->get('/manufacturers/{id}', 'ManufacturerController@show');
 $router->post('/manufacturers/create', 'ManufacturerController@store');
-$router->post('/manufacturers/update/{id}', 'ManufacturerController@update');
+$router->put('/manufacturers/update/{id}', 'ManufacturerController@update');
 $router->delete('/manufacturers/delete/{id}', 'ManufacturerController@destroy');
 
 $router->get('/sales', 'salesController@index');
 $router->get('/sales/{id}', 'salesController@show');
 $router->post('/sales/create', 'salesController@store');
-$router->post('/sales/update/{id}', 'salesController@update');
+$router->put('/sales/update/{id}', 'salesController@update');
 $router->delete('/sales/delete/{id}', 'salesController@destroy');
 
 $router->get('/sales_item', 'salesItemController@index');
 $router->get('/sales_item/{id}', 'salesItemController@show');
 $router->post('/sales_item/create', 'salesItemController@store');
-$router->post('/sales_item/update/{id}', 'salesItemController@update');
+$router->put('/sales_item/update/{id}', 'salesItemController@update');
 $router->delete('/sales_item/delete/{id}', 'salesItemController@destroy');
 
 

@@ -129,7 +129,7 @@ class salesController extends Controller
 
 
     /**
-     * @OA\Post  (
+     * @OA\Put  (
      *     path="/sales/update/{sale_id}",
      *     summary="Atualizar uma venda existente",
      *     tags={"Venda"},

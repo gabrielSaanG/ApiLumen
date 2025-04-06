@@ -128,7 +128,7 @@ class ManufacturerController extends Controller
 
 
     /**
-     * @OA\Post(
+     * @OA\Put(
      *     path="/manufacturers/update/{id}",
      *     summary="Alterar um cadastro",
      *     tags={"Fabricante"},

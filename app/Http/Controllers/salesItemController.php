@@ -131,7 +131,7 @@ class salesItemController extends Controller
     }
 
     /**
-     * @OA\Post(
+     * @OA\Put(
      *     path="/sales_item/update/{id}",
      *     summary="Alterar um cadastro",
      *     tags={"Itens de venda"},
@@ -145,10 +145,11 @@ class salesItemController extends Controller
      *     @OA\RequestBody(
      *         required=true,
      *         @OA\JsonContent(
-     *            required={"sales_item_date", "sale_id", "product_id", "quantity"},
+     *              required={"sales_item_date", "sale_id", "product_id", "quantity"},
      *              @OA\Property (property="sales_item_date", type="string", format="date", example="2025-04-06"),
      *              @OA\Property (property="sale_id", type="integer", example="1"),
      *              @OA\Property (property="product_id", type="integer", example="2"),
+     *              @OA\Property (property="quantity", type="integer", example="1"),
      *         )
      *     ),
      *     @OA\Response (
@@ -156,8 +157,9 @@ class salesItemController extends Controller
      *         description="Item de venda alterado com sucesso",
      *         @OA\JsonContent (
      *          @OA\Property (property="sales_item_date", type="string", format="date", example="2025-04-06"),
-     *               @OA\Property (property="sale_id", type="integer", example="1"),
-     *               @OA\Property (property="product_id", type="integer", example="2"),
+     *          @OA\Property (property="sale_id", type="integer", example="1"),
+     *          @OA\Property (property="product_id", type="integer", example="2"),
+     *          @OA\Property (property="quantity", type="integer", example="1"),
      *         )
      *     ),
      *      @OA\Response (
@@ -171,12 +173,14 @@ class salesItemController extends Controller
     public function update(Request $request, $id)
     {
         $this->validate($request, [
+            "sales_item_date" => "required",
             "sale_id" => "required|exists:sales,sale_id",
             "product_id" => "required|exists:products,id",
             "quantity" => "required",
         ]);
 
-        $salesItems = SalesItem::find($id);
+        $salesItems = SalesItem::where('sales_item_id', $id)->first();
+        $salesItems->sales_item_date = $request->input('sales_item_date');
         $salesItems->sale_id = $request->input('sale_id');
         $salesItems->product_id = $request->input('product_id');
         $salesItems->quantity = $request->input('quantity');

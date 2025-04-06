@@ -144,12 +144,12 @@
             }
         },
         "/manufacturers/update/{id}": {
-            "post": {
+            "put": {
                 "tags": [
                     "Fabricante"
                 ],
                 "summary": "Alterar um cadastro",
-                "operationId": "199ae491774c1c08e13b914d4f1c4dbf",
+                "operationId": "c001d25ca6c46548ab4ee6ea671ccfb4",
                 "parameters": [
                     {
                         "name": "id",
@@ -449,12 +449,12 @@
             }
         },
         "/products/update/{id}": {
-            "post": {
+            "put": {
                 "tags": [
                     "Produto"
                 ],
                 "summary": "Alterar um cadastro",
-                "operationId": "d3b9a3323d0dab98dd2e8d00b8b2f0b8",
+                "operationId": "dd3708926693d9d189fbaaccbb852a1c",
                 "parameters": [
                     {
                         "name": "id",
@@ -717,12 +717,12 @@
             }
         },
         "/sales/update/{sale_id}": {
-            "post": {
+            "put": {
                 "tags": [
                     "Venda"
                 ],
                 "summary": "Atualizar uma venda existente",
-                "operationId": "84490e3c8fc48925009e1cffaa7e10b1",
+                "operationId": "6549216fc5f6e56c98d3f0241e759d09",
                 "parameters": [
                     {
                         "name": "sale_id",
@@ -950,12 +950,12 @@
             }
         },
         "/sales_item/update/{id}": {
-            "post": {
+            "put": {
                 "tags": [
                     "Itens de venda"
                 ],
                 "summary": "Alterar um cadastro",
-                "operationId": "ef769845c3d3ee465b66cfb1ce62ee2e",
+                "operationId": "a26a302b314c5972ec7277280f964271",
                 "parameters": [
                     {
                         "name": "id",
@@ -991,6 +991,10 @@
                                     "product_id": {
                                         "type": "integer",
                                         "example": "2"
+                                    },
+                                    "quantity": {
+                                        "type": "integer",
+                                        "example": "1"
                                     }
                                 },
                                 "type": "object"
@@ -1017,6 +1021,10 @@
                                         "product_id": {
                                             "type": "integer",
                                             "example": "2"
+                                        },
+                                        "quantity": {
+                                            "type": "integer",
+                                            "example": "1"
                                         }
                                     },
                                     "type": "object"
